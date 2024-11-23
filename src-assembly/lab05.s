@@ -56,6 +56,10 @@ next:
     beq  s1, s2, next
     add  t5, s1, s2
     add  t6, s1, s3
+    # nop instructions added between examples
+    add  zero, zero, zero  
+    add  zero, zero, zero  
+    add  zero, zero, zero 
 
 # ----------------------------------------------------------------------------------------
 # Check how many cycles are lost when a branch IS taken
@@ -64,6 +68,10 @@ next:
     add  t1, zero, s2
 taken:
 
+    # nop instructions added between examples
+    add  zero, zero, zero  
+    add  zero, zero, zero  
+    add  zero, zero, zero 
 # ----------------------------------------------------------------------------------------
 # TODO: Add an example where an instruction passes its result to the 2nd following instruction
 # There should be no stalls
@@ -75,7 +83,7 @@ taken:
 
 # ----------------------------------------------------------------------------------------
 # TODO: Add an example with a double hazard and check that it works corretly.
-# A double hazzard is when the source register of an instruction matches the destination
+# A double hazard is when the source register of an instruction matches the destination
 #  registers of both of the two instructions preceeding it. It should get the newest value.
 # There should be no stalls
 # ----------------------------------------------------------------------------------------

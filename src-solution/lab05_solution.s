@@ -68,7 +68,7 @@ taken:
 # An example where an instruction passes its result to the 2nd following instruction
 # There should be no stalls
     add  t1, s0, s1   # t1 = 1
-    addi t2, s0, s2   # t2 = 2
+    add  t2, s0, s2   # t2 = 2
     add  t3, t1, s3   # t3 = 4
 # ----------------------------------------------------------------------------------------
     # nop instructions added between examples
@@ -78,11 +78,11 @@ taken:
 
 # ----------------------------------------------------------------------------------------
 # An example with a double hazard and check that it works corretly.
-# A double hazzard is when the source register of an instruction matches the destination
+# A double hazard is when the source register of an instruction matches the destination
 #  registers of both of the two instructions preceeding it. It should get the newest value.
 # There should be no stalls
     add  t1, s0, s1   # t1 = 1
-    addi t1, s0, s2   # t1 = 2
+    add  t1, s0, s2   # t1 = 2
     add  t3, t1, s3   # t3 = 5
 # ----------------------------------------------------------------------------------------
     # nop instructions added between examples
@@ -95,7 +95,7 @@ taken:
 #  Is this a data hazard or a control hazard?
     lw   t3, 4(a0)
     beq  t3, zero, exit   # Dependence on t3 is a data hazard.
-                          # The branch itself **can be** a control hazard, it taken
+                          # The branch itself **can be** a control hazard, if taken
 # ----------------------------------------------------------------------------------------
     # nop instructions added between examples
     add  zero, zero, zero  
